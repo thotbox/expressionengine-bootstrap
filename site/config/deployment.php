@@ -95,7 +95,7 @@ if(isset($config)) {
         'global_cm_slug' => 'XXXXXX',
         'global_typography_id' => 'XXXXXX/XXXX',
         'global_typekit_id' => 'XXXXXXX',
-        'jquery_url' => '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'
+        'global_jquery_url' => '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'
     );
 
     // TTL
