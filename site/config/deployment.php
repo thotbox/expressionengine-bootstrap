@@ -67,7 +67,7 @@ if(isset($config)) {
         1 => array(
             'name' => 'Main Uploads',
             'server_path' => $config['server_path'].'/uploads/',
-            'url' => $config['site_url'].'/uploads/'
+            'url' => '/uploads/'
         )
     );
 
