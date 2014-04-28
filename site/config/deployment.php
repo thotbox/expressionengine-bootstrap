@@ -26,6 +26,10 @@
 */
 
 if(isset($config)) {
+
+    // Site Status
+    $config['is_system_on'] = 'y';
+
     // Site URL
     $config['site_url'] = 'http://example.com';
 
@@ -82,6 +86,16 @@ if(isset($config)) {
     // Member Trigger - Prevents Spam Registrations
     $config['profile_trigger'] = md5(mt_rand());
 
+    // TTL
+    $config['cp_session_ttl'] = 3600;
+    $config['user_session_ttl'] = 3600;
+
+    // Disable CSRF Protection (Freeform Fix)
+    $config['disable_csrf_protection'] = 'y';
+
+    // Encryption Key (63 random alpha-numeric - https://www.grc.com/passwords.htm)
+    $config['encryption_key'] = '';
+
     // Global Variables
     global $assign_to_config;
     $assign_to_config['global_vars'] = array(
@@ -89,19 +103,8 @@ if(isset($config)) {
         'global_theme_path' => $config['theme_folder_path'].'site_themes/site',
         'global_disable_default' => 'disable="categories|member_data|pagination|trackbacks"',
         'global_disable_all' => 'disable="categories|custom_fields|member_data|pagination|trackbacks"',
-        'global_cache' => 'cache="yes" refresh="60"',
-        'global_analytics_key' => 'UA-XXXXXXXXX-1',
-        'global_analytics_domain' => 'example.com',
-        'global_cm_slug' => 'XXXXXX',
-        'global_typography_id' => 'XXXXXX/XXXX',
-        'global_typekit_id' => 'XXXXXXX',
-        'global_jquery_url' => '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'
+        'global_cache' => 'cache="yes" refresh="60"'
     );
-
-    // TTL
-    $config['cp_session_ttl'] = 3600;
-    $config['user_session_ttl'] = 3600;
-
 }
 
 /*
@@ -112,10 +115,21 @@ if(isset($config)) {
 
 if(isset($db['expressionengine']))
 {   
+    $active_group = 'expressionengine';
+    $active_record = TRUE;
     $db['expressionengine']['hostname'] = 'localhost';
     $db['expressionengine']['username'] = 'db_user';
     $db['expressionengine']['password'] = 'db_pass';
     $db['expressionengine']['database'] = 'db_name';
+    $db['expressionengine']['dbdriver'] = 'mysql';
+    $db['expressionengine']['pconnect'] = FALSE;
+    $db['expressionengine']['dbprefix'] = 'exp_';
+    $db['expressionengine']['swap_pre'] = 'exp_';
+    $db['expressionengine']['db_debug'] = TRUE;
+    $db['expressionengine']['cache_on'] = FALSE;
+    $db['expressionengine']['autoinit'] = FALSE;
+    $db['expressionengine']['char_set'] = 'utf8';
+    $db['expressionengine']['dbcollat'] = 'utf8_general_ci';
     $db['expressionengine']['cachedir'] = $config['server_path'].'/'.$config['system_folder'].'/expressionengine/cache/db_cache/';
 }
 

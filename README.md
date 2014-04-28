@@ -10,6 +10,7 @@ Quick and dirty custom bootstrap to assist with the deployment and migration of 
 * Randomizes default member trigger (default)
 * Creates a few handy global variables
 * Centralizes commonly used configuration variables from config.php and database.php
+* Various tweaks and fixes
 
 ### Important
 
@@ -30,11 +31,3 @@ ExpressionEngine is an extremely flexible CMS, and most developers have their ow
 ```
 require(realpath(dirname(__FILE__) . '/../../../themes/site_themes/site/config/deployment.php'));
 ```
-or copy sample files found in /themes/site_themes/site/config/ee
-7. (optional) Copy "nerdery" folder from /themes/site_themes/site/addons/cp to /themes/cp_themes
-
-### Additional Notes
-
-I've included the Nerdery control panel theme with this package because I use it for all of my EE builds because the default CP themes are horribad. I take no credit for this theme. I didn't build it, but I do highly recommend it.
-
-For more information: https://github.com/litzinger/Nerdery-Theme
