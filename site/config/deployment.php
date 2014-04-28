@@ -13,8 +13,6 @@
 |
 | ** Rename admin.php to your_admin_filename.php **
 |
-| ** Copy Nerdery theme from site/addons/cp to /themes/cp_themes **
-|
 | ** Create /uploads and /uploads/made folders and set permissions **
 |
 */
