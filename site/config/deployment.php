@@ -51,7 +51,7 @@ if(isset($config)) {
     $config['theme_folder_url'] = $config['site_url'].'/themes/';
 
     // Control Panel Theme
-    $config['cp_theme'] = 'nerdery';
+    $config['cp_theme'] = '';
 
     // Addon Paths
     $config['url_third_themes'] = $config['theme_folder_url'].'site_themes/site/addons/themes/';
