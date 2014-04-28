@@ -3,6 +3,7 @@
 /*
 |--------------------------------------------------------------------------
 | Thotbox - Custom ExpressionEngine Deployment Bootstrap
+| Version 1.2
 |--------------------------------------------------------------------------
 |
 | ** Add to default config.php and database.php or copy templates from site/config/ee **
