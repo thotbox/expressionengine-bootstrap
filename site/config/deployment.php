@@ -13,14 +13,17 @@
 
 /*
 |--------------------------------------------------------------------------
-| Development Environment
+| Deployment Environment
 |--------------------------------------------------------------------------
 | Options:
-| production - (live envirionment)
-| tunneled -  (local files, ssh tunnel to database)
+| production - (live server)
+| development -  (development server)
+| tunneled -  (local files, ssh tunnel to database on production/dev server)
 | local -  (local files, local database)
 |--------------------------------------------------------------------------
 */
+
+// Set environment
 
 define('deployment_environment', 'production');
 
@@ -31,6 +34,19 @@ if (isset($config) && deployment_environment == 'production') {
 }
 
 if (isset($db['expressionengine']) && deployment_environment == 'production') {   
+    $db['expressionengine']['hostname'] = 'localhost';
+    $db['expressionengine']['username'] = 'db_user';
+    $db['expressionengine']['password'] = 'db_password';
+    $db['expressionengine']['database'] = 'db_name';
+}
+
+// Development
+
+if (isset($config) && deployment_environment == 'development') {
+    $config['site_url'] = 'http://hostname.com';
+}
+
+if (isset($db['expressionengine']) && deployment_environment == 'development') {   
     $db['expressionengine']['hostname'] = 'localhost';
     $db['expressionengine']['username'] = 'db_user';
     $db['expressionengine']['password'] = 'db_password';
