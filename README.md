@@ -33,8 +33,8 @@ ExpressionEngine is an extremely flexible CMS, and most developers have their ow
 4. Modify settings in /themes/site_themes/site/config/settings.php to your taste
 5. Rename system folder and admin.php (optional/recommended)
 6. Modify "$system_path" variable in /index.php and /admin.php (if changed)
-7. Add the following to the bottom of config.php and database.php found in /system/expressionengine/config
+7. Add .gitignore rule for /themes/site_themes/site/config/deployment.php if using git based version control and set deployment_environment in deployment.php for each environment (local, development server, production server, etc.)
+8. Add the following to the bottom of config.php and database.php found in /system/expressionengine/config
 ```
 require(realpath(dirname(__FILE__) . '/../../../themes/site_themes/site/config/deployment.php'));
 ```
-8. Add .gitignore rule for /themes/site_themes/site/config/deployment.php if using git based version control and set deployment_environment in deployment.php for each environment (local, development server, production server, etc.)
