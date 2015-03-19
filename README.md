@@ -27,7 +27,7 @@ ExpressionEngine is an extremely flexible CMS, and most developers have their ow
 
 ### Installation
 
-1. Sync templates and backup files and database
+1. Sync templates and backup files/database
 2. Copy "site" folder to /themes/site_themes/
 3. Modify database and environment settings in /themes/site_themes/site/config/deployment.php
 4. Modify settings in /themes/site_themes/site/config/settings.php to your taste
