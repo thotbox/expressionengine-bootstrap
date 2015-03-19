@@ -7,6 +7,7 @@
 |--------------------------------------------------------------------------
 | Instructions:
 | Add require(realpath(dirname(__FILE__) . '/../../../themes/site_themes/site/config/deployment.php')); to bottom default config.php and database.php
+| Tweak options in settings.php as needed
 |--------------------------------------------------------------------------
 */
 
