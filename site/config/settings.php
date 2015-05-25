@@ -3,7 +3,7 @@
 /*
 |--------------------------------------------------------------------------
 | Thotbox - Custom ExpressionEngine Deployment Bootstrap
-| Version 2.0
+| Version 2.1
 |--------------------------------------------------------------------------
 | Config
 |--------------------------------------------------------------------------
@@ -74,8 +74,28 @@ if (isset($config)) {
     // Disable CSRF Protection (set to 'y' to fix freeform expired form errors)
     $config['disable_csrf_protection'] = 'n';
 
+    // CAPTCHA
+    $config['captcha_path'] = $config['server_path'].'/images/captchas/';
+    $config['captcha_url'] = $config['site_url'].'/images/captchas/';
+    $config['captcha_rand'] = 'y';
+    $config['captcha_require_members'] = 'y';
+
+    // Hon-ee Pot Config
+    $config['honeepot_field'] = 'field_name';
+    $config['honeepot_error'] = 'Bot submissions blocked.';
+
     // Encryption Key (63 random alpha-numeric - https://www.grc.com/passwords.htm)
     $config['encryption_key'] = '';
+
+    // Misc Paths
+    $config['avatar_path'] = $config['server_path'].'/images/avatars/';
+    $config['avatar_url'] = $config['site_url'].'/images/avatars';
+    $config['photo_path'] = $config['server_path'].'/images/member_photos/';
+    $config['photo_url'] = $config['site_url'].'/images/member_photos/';
+    $config['sig_img_path'] = $config['server_path'].'/images/signature_attachments/';
+    $config['sig_img_url'] = $config['site_url'].'/images/signature_attachments/';
+    define('deployment_server_path', $config['server_path']);
+    define('deployment_system_folder', $config['system_folder']);
 
     // Global Variables
     global $assign_to_config;
@@ -104,5 +124,5 @@ if (isset($db['expressionengine'])) {
     $db['expressionengine']['autoinit'] = FALSE;
     $db['expressionengine']['char_set'] = 'utf8';
     $db['expressionengine']['dbcollat'] = 'utf8_general_ci';
-    $db['expressionengine']['cachedir'] = $config['server_path'].'/'.$config['system_folder'].'/expressionengine/cache/db_cache/';
+    $db['expressionengine']['cachedir'] = deployment_server_path.'/'.deployment_system_folder.'/expressionengine/cache/db_cache/';
 }

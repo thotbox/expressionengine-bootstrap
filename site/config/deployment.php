@@ -3,10 +3,10 @@
 /*
 |--------------------------------------------------------------------------
 | Thotbox - Custom ExpressionEngine Deployment Bootstrap
-| Version 2.0
+| Version 2.1
 |--------------------------------------------------------------------------
-| Instructions:
-| Add require(realpath(dirname(__FILE__) . '/../../../themes/site_themes/site/config/deployment.php')); to bottom default config.php and database.php
+| Instructions - Add to bottom default config.php and database.php:
+| require(realpath(dirname(__FILE__) . '/../../../themes/site_themes/site/config/deployment.php')); 
 | Tweak options in settings.php as needed
 |--------------------------------------------------------------------------
 */
@@ -61,9 +61,9 @@ if (isset($config) && deployment_environment == 'tunneled') {
 
 if (isset($db['expressionengine']) && deployment_environment == 'tunneled') {   
     $db['expressionengine']['hostname'] = '127.0.0.1:3307';
-        $db['expressionengine']['username'] = 'db_user';
-        $db['expressionengine']['password'] = 'db_password';
-        $db['expressionengine']['database'] = 'db_name';
+    $db['expressionengine']['username'] = 'db_user';
+    $db['expressionengine']['password'] = 'db_password';
+    $db['expressionengine']['database'] = 'db_name';
 }
 
 // Local
