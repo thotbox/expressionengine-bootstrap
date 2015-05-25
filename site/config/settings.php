@@ -75,8 +75,6 @@ if (isset($config)) {
     $config['disable_csrf_protection'] = 'n';
 
     // CAPTCHA
-    $config['captcha_path'] = $config['server_path'].'/images/captchas/';
-    $config['captcha_url'] = $config['site_url'].'/images/captchas/';
     $config['captcha_rand'] = 'y';
     $config['captcha_require_members'] = 'y';
 
@@ -94,6 +92,8 @@ if (isset($config)) {
     $config['photo_url'] = $config['site_url'].'/images/member_photos/';
     $config['sig_img_path'] = $config['server_path'].'/images/signature_attachments/';
     $config['sig_img_url'] = $config['site_url'].'/images/signature_attachments/';
+    $config['captcha_path'] = $config['server_path'].'/images/captchas/';
+    $config['captcha_url'] = $config['site_url'].'/images/captchas/';
     define('deployment_server_path', $config['server_path']);
     define('deployment_system_folder', $config['system_folder']);
 
