@@ -85,6 +85,14 @@ if (isset($config)) {
     // Encryption Key (63 random alpha-numeric - https://www.grc.com/passwords.htm)
     $config['encryption_key'] = '';
 
+    // Global Variables
+    global $assign_to_config;
+    $assign_to_config['global_vars'] = array(
+        'global_theme_url' => '/themes/site_themes/site',
+        'global_theme_path' => $config['theme_folder_path'].'site_themes/site',
+        'global_environment' => deployment_environment
+    );
+
     // Misc Paths
     $config['avatar_path'] = $config['server_path'].'/images/avatars/';
     $config['avatar_url'] = $config['site_url'].'/images/avatars';
@@ -94,16 +102,10 @@ if (isset($config)) {
     $config['sig_img_url'] = $config['site_url'].'/images/signature_attachments/';
     $config['captcha_path'] = $config['server_path'].'/images/captchas/';
     $config['captcha_url'] = $config['site_url'].'/images/captchas/';
+
+    // Loose Ends
     define('deployment_server_path', $config['server_path']);
     define('deployment_system_folder', $config['system_folder']);
-
-    // Global Variables
-    global $assign_to_config;
-    $assign_to_config['global_vars'] = array(
-        'global_theme_url' => '/themes/site_themes/site',
-        'global_theme_path' => $config['theme_folder_path'].'site_themes/site',
-        'global_environment' => deployment_environment
-    );
 }
 
 /*
