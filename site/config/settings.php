@@ -15,7 +15,7 @@ if (isset($config)) {
     $config['is_system_on'] = 'y';
 
     // Site Index
-    $config['index_page'] = '';
+    $config['site_index'] = '';
 
     // Site Label
     $config['site_label'] = 'Site Label';
