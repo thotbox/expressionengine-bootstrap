@@ -27,7 +27,7 @@ if (isset($config)) {
     $config['system_folder'] = 'system';
 
     // admin.php
-    $config['cp_url'] = $config['site_url'].'admin.php';
+    $config['cp_url'] = $config['site_url'].'/'.'admin.php';
 
     // Theme Folder
     $config['theme_folder_path'] = $config['server_path'].'/themes/';
